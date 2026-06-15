@@ -1,0 +1,547 @@
+/* ============================================================
+THEME VARIABLES
+============================================================ */
+:root {
+    --gold-btn: #E1A801;      /* buttons */
+    --bg-main: #FFF8E2;       /* main page background (cream) */
+    --bg-section: #FFEEAC;    /* some section backgrounds (light yellow) */
+    --green: #4F6817;         /* waves / illustrations / footer */
+    --gold-accent: #F4C84D;   /* card + image-blob backgrounds */
+    --bg-about: #FDF4CD;      /* about section warm yellow background */
+
+    --text-dark: #2b2615;     /* headings on light bg */
+    --text-body: #3f3a28;     /* body copy */
+    --card-text: #4a3f12;     /* text on gold cards */
+    --on-green: #fdfaee;      /* text on green background */
+
+    --font-h1: "Playfair Display", serif;
+    --font-h2: "Domine", serif;
+    --font-body: "Nunito Sans", sans-serif;
+    --maxw: 1200px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-main);
+    color: var(--text-body);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1 { font-family: var(--font-h1); color: var(--text-dark); font-weight: 700; }
+h2, h3 { font-family: var(--font-h2); color: var(--text-dark); }
+p { margin: 0 0 1rem; }
+
+/* ============================================================
+BUTTONS
+============================================================ */
+.btn {
+    display: inline-block;
+    background: var(--gold-btn);
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    padding: 0.7rem 1.6rem;
+    border-radius: 10px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 10px rgba(79, 104, 23, 0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover {
+    filter: brightness(1.07);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(79, 104, 23, 0.28);
+}
+.btn:active { transform: scale(0.98); }
+.btn-book-tid { padding: 0.55rem 1.4rem; }
+
+/* ============================================================
+HEADER & NAVIGATION ARCHITECTURE
+============================================================ */
+.site-header {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    right: 5%;
+    z-index: 20;
+    background: #4a533ac0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 2rem;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.logo-placeholder {
+    width: 50px;
+    height: 42px;
+    background: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    color: #555;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+.wordmark {
+    font-family: var(--font-h1);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+.main-nav {
+    display: flex;
+    gap: 0.4rem;
+    margin-left: auto;
+    align-items: center;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 20px;
+    transition: background 0.15s ease;
+}
+.main-nav a:hover, .main-nav a.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-nav-desktop { margin-left: 1rem; border-radius: 20px; }
+.btn-nav-mobile { display: none; }
+.burger-menu { display: none; z-index: 30; }
+
+/* ============================================================
+✨ HERO SECTION
+============================================================ */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/billede3%20(1).jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 24px 230px 24px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    height: 120vh;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+.hero h1 {
+    font-family: var(--font-h1);
+    font-size: 3.2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.6);
+    line-height: 1.25;
+    text-align: center;
+}
+
+.hero p {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.hero-wave {
+    position: absolute;
+    bottom: -55px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+}
+
+.wave-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================================
+WAVES & SECTIONS GENERAL
+============================================================ */
+.wave-container {
+    width: 100%;
+    line-height: 0;
+    margin: 0;
+}
+.margin-minus {
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+section {
+    padding: 50px 8px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.section-title {
+    font-family: var(--font-h1);
+    font-size: 2.6rem;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.section-text {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    max-width: 720px;
+}
+
+/* Organiske Billedformer (Blobs) */
+.blob-img {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+/* DESKTOP ROW ARCHITECTURE FOR SPLIT-SECTIONS */
+.split-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+}
+.split-row:last-of-type {
+    margin-bottom: 0;
+}
+.row-image {
+    flex: 1;
+    max-width: 420px;
+}
+.row-text {
+    flex: 1.2;
+    text-align: left;
+}
+
+/* 👥 BEHANDLINGSFORLØB GRID */
+.behandling-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 10px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+}
+.behandling-text-1 {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+}
+.behandling-image {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+}
+.behandling-text-2 {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+}
+
+/* Sektions-farver */
+.green-section {
+    background-color: rgb(253, 244, 205);
+}
+
+.cream-section {
+    background-color: var(--bg-main);
+    color: var(--text-body);
+}
+.cream-section .section-title {
+    color: var(--text-dark);
+}
+
+/* Liste-styling */
+ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+    padding: 0;
+}
+ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+}
+ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-size: 1.4rem;
+    top: -2px;
+}
+
+.focus-heading {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-family: var(--font-h2);
+}
+
+/* Testimonial Box */
+.testimonial-box {
+    font-style: italic;
+    border-left: 4px solid var(--gold-accent);
+    padding-left: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+}
+.testimonial-author {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ============================================================
+🗓️ NÆSTE HOLD GRUPPEFORLØB
+============================================================ */
+.naeste-hold-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+.naeste-hold-image {
+    grid-column: 1;
+}
+.naeste-hold-content {
+    grid-column: 2;
+    text-align: left;
+}
+.naeste-hold-content .btn {
+    margin: 25px 0 0 0;
+    display: inline-block;
+}
+
+/* ============================================================
+🗓️ NÆSTE GRUPPEFORLØB GRID
+============================================================ */
+.næste-forløb-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+.næste-forløb-content {
+    grid-column: 1;
+    text-align: left;
+}
+.næste-forløb-content .btn {
+    margin: 25px 0 0 0;
+    display: inline-block;
+}
+.næste-forløb-image {
+    grid-column: 2;
+}
+
+/* ============================================================
+FOOTER
+============================================================ */
+footer {
+    background-color: var(--green);
+    color: var(--on-green);
+    padding: 60px 24px 30px;
+}
+.footer-grid {
+    max-width: var(--maxw);
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.footer-links a {
+    display: block;
+    color: var(--on-green);
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+.copyright {
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 20px;
+}
+
+/* ============================================================
+📲 PHONE & MOBILE OVERRIDES (Combined & Cleaned)
+============================================================ */
+@media (max-width: 768px) {
+    .site-header { left: 4%; right: 4%; top: 15px; border-radius: 20px; }
+    .header-inner { padding: 0.5rem 1.2rem; justify-content: space-between; }
+    .wordmark { font-size: 0.85rem; }
+
+    .btn-nav-desktop { display: none !important; }
+
+    /* Mobil Menu Toggle */
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 18px;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+    .burger-menu span {
+        width: 100%;
+        height: 2.5px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+    .burger-menu.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .burger-menu.open span:nth-child(2) { opacity: 0; }
+    .burger-menu.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .main-nav {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        right: 0;
+        background: var(--bg-main);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.25s ease;
+    }
+    .main-nav.active { opacity: 1; visibility: visible; transform: translateY(0); }
+    .main-nav a { width: 100%; text-align: center; padding: 0.9rem 0; color: var(--text-dark); border-radius: 0; }
+    .main-nav .btn-nav-mobile {
+        display: inline-block; width: auto; min-width: 160px; margin: 1rem auto 0.5rem;
+        padding: 0.6rem 1.8rem; background: var(--gold-btn); color: #ffffff !important;
+        border-radius: 30px;
+    }
+
+    /* 📲 HERO MOBIL */
+    .hero {
+        min-height: 65vh !important;
+        padding: 50px 20px 130px 20px !important;
+        height: 50vh;
+    }
+    .hero h1 { font-size: 2.2rem !important; }
+    .hero p { font-size: 1.05rem !important; }
+    .hero-wave { bottom: -5px !important; }
+
+    /* Mindre side-padding på alle sektioner på mobilen */
+    section {
+        padding: 55px 12px !important;
+    }
+
+    .section-title {
+        font-size: 2.1rem !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* 📲 STRØMLINET FLUID-ORDER FOR ALL CONTENT GRIDS ON MOBILE
+       (Styrer at strukturen altid bliver: Title -> Image -> Text 1 -> Text 2) */
+    .behandling-grid, .naeste-hold-grid, .næste-forløb-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    .behandling-image, .naeste-hold-image, .næste-forløb-image {
+        order: 1 !important; /* Billedet sendes helt i top lige under h2-titlen */
+        width: 100% !important;
+        max-width: 340px !important;
+        margin: 10px auto 15px auto !important;
+    }
+
+    .behandling-text-1, .naeste-hold-content, .næste-forløb-content {
+        order: 2 !important;
+    }
+
+    .behandling-text-2 {
+        order: 3 !important;
+    }
+
+    /* Knapper centreres og tilpasses bunden af mobilvisning */
+    .naeste-hold-content .btn, .næste-forløb-content .btn {
+        order: 4 !important;
+        margin: 25px auto 0 auto !important;
+        width: 100% !important;
+        max-width: 290px !important;
+        text-align: center;
+    }
+
+    .split-row {
+        flex-direction: column !important;
+        gap: 20px !important;
+        margin-bottom: 40px !important;
+        width: 100% !important;
+    }
+    .row-image {
+        width: 100% !important;
+        max-width: 340px !important;
+        margin: 0 auto !important;
+    }
+    .row-text {
+        width: 100% !important;
+        text-align: left !important;
+    }
+}

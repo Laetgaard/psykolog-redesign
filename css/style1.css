@@ -1,0 +1,481 @@
+/* ============================================================
+   THEME — change colors & fonts here, applies site-wide
+   ============================================================ */
+:root {
+    --gold-btn:    #E1A801;  /* buttons */
+    --bg-main:     #FFF8E2;  /* main page background (cream) */
+    --bg-section:  #FFEEAC;  /* some section backgrounds (light yellow) */
+    --green:       #4F6817;  /* waves / illustrations / footer */
+    --gold-accent: #F4C84D;  /* card + image-blob backgrounds */
+
+    --text-dark:   #2b2615;  /* headings on light bg */
+    --text-body:   #3f3a28;  /* body copy */
+    --card-text:   #4a3f12;  /* text on gold cards */
+    --on-green:    #fdfaee;  /* text on green footer */
+
+    --font-h1: "Playfair Display", serif;
+    --font-h2: "Domine", serif;
+    --font-body: "Nunito Sans", sans-serif;
+    --maxw: 1200px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-main);
+    color: var(--text-body);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 { font-family: var(--font-h1); color: var(--text-dark); font-weight: 700; }
+h2, h3 { font-family: var(--font-h2); color: var(--text-dark); }
+p { margin: 0 0 1rem; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+    display: inline-block;
+    background: var(--gold-btn);
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    padding: 0.7rem 1.6rem;
+    border-radius: 10px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 10px rgba(79, 104, 23, 0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.btn:hover {
+    filter: brightness(1.07);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(79, 104, 23, 0.28);
+}
+.btn-book-tid { padding: 0.55rem 1.4rem; }
+.btn-lg { font-size: 1.15rem; padding: 0.85rem 2rem; }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    right: 5%;
+    z-index: 20;
+    background: #4a533ac0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 2rem;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.logo-placeholder {
+    width: 50px;
+    height: 42px;
+    background: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    color: #555;
+    border-radius: 25px;
+}
+.wordmark {
+    font-family: var(--font-h1);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+.main-nav {
+    display: flex;
+    gap: 0.4rem;
+    margin-left: auto;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 20px;
+    transition: background 0.15s ease;
+}
+.main-nav a:hover,
+.main-nav a.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+.btn-book-tid {
+    padding: 0.55rem 1.4rem;
+    margin-left: 1rem;
+    border-radius: 20px;
+}
+.burger-menu {
+    display: none;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+    position: relative;
+    background: var(--bg-main);
+    min-height: 780px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+.hero-media {
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    z-index: 1;
+}
+.hero-wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    width: 100%;
+    padding: 26rem 1.5rem 5rem;
+    box-sizing: border-box;
+    text-align: left;
+}
+.hero-content h1 {
+    font-size: 3.2rem;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    white-space: nowrap;
+    max-width: none;
+}
+.hero-content p {
+    max-width: 42ch;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+.hero-img {
+    width: 110%; height: 110%;
+    min-height: 260px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    text-align: center;
+    object-fit: cover;
+}
+
+/* ============================================================
+   FEATURE CARDS
+   ============================================================ */
+.features {
+    background: var(--bg-main);
+    padding: 1rem 1.5rem 4.5rem;
+}
+.features-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.feature-card {
+    background: var(--gold-accent);
+    border-radius: 14px;
+    padding: 2rem 1.8rem 2.2rem;
+    text-align: center;
+    color: var(--card-text);
+    box-shadow: 0 6px 18px rgba(79, 104, 23, 0.12);
+}
+.feature-icon { color: var(--card-text); height: 70px; margin-bottom: 0.5rem; }
+.feature-icon svg { height: 64px; width: 64px; }
+.feature-card h2 { font-size: 1.45rem; margin: 0.2rem 0 0.9rem; color: var(--card-text); }
+.feature-card p { font-size: 0.94rem; font-weight: 600; margin: 0; }
+
+/* ============================================================
+   MØD PSYKOLOGEN (About Section)
+   ============================================================ */
+.about {
+    position: relative;
+    background: #FDF4CD;
+    z-index: 1;
+    margin-bottom: 0;
+    padding: 50px 0;
+}
+.about-inner {
+    position: relative;
+    z-index: 3;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+.about-title {
+    font-size: 2.8rem;
+    margin: 0 0 1.5rem;
+}
+.about-text p {
+    max-width: 48ch;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+.about-text .btn {
+    margin-top: 1rem;
+}
+.about-photo {
+    display: flex;
+    justify-content: center;
+}
+.about-photo .blob-img {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 65% 35% 30% 70% / 50% 40% 60% 50%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   BEHANDLINGSFORLØB
+   ============================================================ */
+.process {
+    position: relative;
+    background: var(--bg-main);
+    padding: 8rem 1.5rem;
+}
+.process-inner { max-width: var(--maxw); margin: 0 auto; text-align: center; }
+.section-title-processen { font-size: 2.6rem; margin: 0 0 3rem; font-family: var(--font-h1); }
+.steps {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.step-card {
+    flex: 1 1 260px;
+    max-width: 300px;
+    background: var(--bg-section);
+    border-radius: 12px;
+    padding: 1.4rem 1.5rem 1.6rem;
+    text-align: left;
+    box-shadow: 0 5px 14px rgba(79, 104, 23, 0.1);
+}
+.step-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.7rem; }
+.step-num {
+    flex-shrink: 0;
+    width: 34px; height: 34px;
+    background: var(--green);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-h2);
+    font-weight: 700;
+}
+.step-card h2 { font-size: 1.15rem; margin: 0; }
+.step-card p { font-size: 0.86rem; margin: 0; }
+.step-arrow { display: flex; align-items: center; }
+.step-arrow svg { width: 52px; }
+.process-inner .btn { margin-top: 2.5rem; }
+
+/* ============================================================
+   ✨ TESTIMONIALS (Forbedret & Responsivt Design)
+   ============================================================ */
+.testimonials {
+    position: relative;
+    background: var(--bg-section);
+    padding: 6rem 1.5rem;
+}
+.testimonials-inner {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.testimonials .section-title {
+    font-family: var(--font-h1);
+    font-size: 2.8rem;
+    margin-bottom: 3.5rem;
+    color: var(--text-dark);
+}
+.testimonial-row {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    align-items: stretch; /* Tvinger kortene til at have ens højde på desktop */
+}
+.anmeldese-kort {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Justeret til toppen for flottere tekstlinjeforløb */
+    align-items: center;
+    text-align: center;
+    color: var(--card-text); /* Mørk kontrastfarve i stedet for ulæselig hvid */
+    z-index: 1;
+    width: 100%;
+    max-width: 370px;
+    aspect-ratio: 384 / 320; /* Øget højdeforhold for at give plads til længere tekst */
+    padding: 3rem 2.2rem 2.5rem;
+    box-sizing: border-box;
+}
+.anmeldese-kort .testimonial.illustration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+.anmeldese-kort h3 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.3rem;
+    font-family: var(--font-h2);
+    color: var(--card-text);
+}
+.anmeldese-kort p {
+    font-size: 0.94rem;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+    font-family: var(--font-body);
+    font-weight: 500;
+    flex-grow: 1; /* Skubber automatisk signaturen ned i bunden */
+}
+.testimonial-signature {
+    display: block;
+    font-size: 0.85rem;
+    font-style: italic;
+    opacity: 0.85;
+    font-weight: 700;
+    margin-top: auto;
+}
+
+/* ============================================================
+   CTA / SNAK
+   ============================================================ */
+.cta {
+    position: relative;
+    background: var(--bg-main);
+    padding: 9rem 1.5rem;
+}
+.cta-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.cta-text { order: 1; }
+.cta-text p { max-width: 44ch; }
+.cta-text .btn { margin-top: 1rem; }
+.cta-media { order: 2; position: relative; }
+.cta-title { font-size: 2.2rem; margin: 0 0 1.5rem; text-align: right; font-family: var(--font-h1); }
+.cta-img { width: 100%; height: auto; border-radius: 58% 42% 47% 53% / 55% 47% 53% 45%; object-fit: cover; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+
+/* ============================================================
+   SYSTEM-DÆKKENDE SVGER / WAVES
+   ============================================================ */
+.fluid-flow-wave, .fluid-flow-wave-1, .fluid-flow-wave-2 { display: block; width: 100%; height: 10vw; min-height: 60px; max-height: 140px; margin: 0; padding: 0; vertical-align: middle; position: relative; z-index: 5; }
+.fluid-flow-wave-1 { background-color: #FDF4CD; }
+.fluid-flow-wave-2 { background-color: #FFEEAC; }
+.wave-svg { width: 100%; height: auto; display: block; }
+.wave-container { width: 100%; line-height: 0; margin: 0; }
+.margin-minus { margin-top: -5px; margin-bottom: -5px; }
+
+/* ============================================================
+   📲 PHONE & MOBILE RESPONSIVE OVERRIDES
+   ============================================================ */
+@media (max-width: 768px) {
+    .site-header { left: 4% !important; right: 4% !important; top: 15px; border-radius: 20px; }
+    .header-inner { padding: 0.5rem 1rem; justify-content: space-between; }
+    .wordmark { font-size: 0.9rem; white-space: nowrap; }
+    .btn-book-tid { display: none !important; }
+
+    .burger-menu {
+        display: flex; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: none; border: none; padding: 0; cursor: pointer; z-index: 30;
+    }
+    .burger-menu span { width: 100%; height: 2.5px; background-color: #ffffff; border-radius: 4px; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; }
+    .burger-menu.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .burger-menu.open span:nth-child(2) { opacity: 0; transform: translateX(10px); }
+    .burger-menu.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+    .main-nav {
+        position: absolute; top: 120%; left: 0; right: 0; background: var(--bg-main); flex-direction: column; gap: 0; padding: 0; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); margin-left: 0; border-radius: 20px; overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.25s ease;
+    }
+    .main-nav.active { opacity: 1; visibility: visible; transform: translateY(0); }
+    .main-nav a { width: 100%; text-align: center; padding: 1rem 0; border-radius: 0; color: var(--text-dark); }
+    .main-nav .btn-nav-mobile { display: inline-block; width: auto; min-width: 160px; margin: 1rem auto; padding: 0.6rem 1.8rem; background: var(--gold-btn); color: #fff !important; border-radius: 30px; text-align: center; }
+
+    /* Hero Mobile */
+    .hero-media { position: absolute; width: 100%; height: 75%; z-index: 1; }
+    .hero-wave-divider { width: 185%; left: -45%; bottom: 0; height: 100%; }
+    .hero-content { padding: 10rem 1.5rem 3rem; text-align: left; z-index: 2; }
+    .hero-content h1 { white-space: normal !important; font-size: 2.2rem; line-height: 1.2; margin-bottom: 1rem; }
+    .hero-content p { font-size: 0.95rem; line-height: 1.5; max-width: 100%; }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .features-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .about-title { font-size: 2.2rem; }
+
+    .steps { flex-direction: column; gap: 1.5rem; }
+    .step-card { max-width: 100%; }
+    .step-arrow { display: none; }
+
+    /* ─── MOBILOPTIMERING AF ANMELDELSER ─── */
+    .testimonials {
+        padding: 4rem 1rem;
+    }
+    .testimonials .section-title {
+        font-size: 2.1rem;
+        margin-bottom: 2rem;
+    }
+    .testimonial-row {
+        gap: 1.5rem;
+    }
+    .anmeldese-kort {
+        max-width: 340px;
+        aspect-ratio: auto; /* Deaktiverer fastlåst højde så lange tekster ikke flyder over */
+        padding: 4rem 1.8rem 3.5rem; /* Ekstra top/bund padding til de asymmetriske buer */
+    }
+    .anmeldese-kort .testimonial.illustration {
+        object-fit: fill; /* Gør at baggrunds-bloben strækker sig organisk med tekstmængden */
+    }
+    .anmeldese-kort p {
+        font-size: 0.92rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /* CTA Mobile */
+    .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .cta-title { text-align: center; font-size: 2rem; }
+    .cta-text { text-align: left; }
+}
