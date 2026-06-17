@@ -359,9 +359,10 @@ BEHANDLINGSFORLØB (Process Section)
 /* ============================================================
 TESTIMONIALS
 ============================================================ */
-.testimonials { position: relative; background: var(--bg-section); padding: 3rem 1rem 4rem; z-index: 4; }
+.testimonials { position: relative; background: var(--bg-section); padding: 1rem 1rem 2rem; z-index: 4; }
 .testimonials-inner { max-width: 1300px; width: 100%; margin: 0 auto; text-align: center; }
-.testimonial-row { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
+.testimonials .section-title { margin: 0.25rem 0 0.5rem; }
+.testimonial-row { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.25rem; }
 .anmeldese-kort {
     position: relative; display: flex; flex-direction: column; justify-content: center;
     align-items: center; text-align: center; color: #fff; z-index: 1;
